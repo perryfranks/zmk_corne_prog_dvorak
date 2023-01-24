@@ -1,16 +1,4 @@
-make shift stiky? 
 move bluetooth settings to be harder to reach (hold down both?)
-
-
 maybe make the layout keys be on hold 
-
-real delete somewhere
-
-home, end, pageup, pagedown near others in the navigation layer
 fkeys somewhere? 
-
 set sleep mode in the konfig 
-
-I actually want escape on the correct side for gaming
-
-    
