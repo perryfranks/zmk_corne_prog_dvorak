@@ -19,8 +19,8 @@
         tri_layer {
             if-layers = <1 2>;
             then-layer = <5>;
-        }
-    }
+        };
+    };
 
         keymap {
                 compatible = "zmk,keymap";
