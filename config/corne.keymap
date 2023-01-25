@@ -29,7 +29,7 @@
 // put the &td? in the keymap part 
 // &td0 TAB ESC 
 // &td1 LSHIFT CAPSLOCK 
-// &td2 SPC ENT 
+// &td2 Space enter 
 // &tde SLash qmark
 // &td4 quote double_quote 
 // &td5 equal plus
@@ -62,7 +62,7 @@
             label = "TAP_DANCE_2"; 
             #binding-cells = <0>; 
             tapping-term-ms = <200>; 
-            binding = <&kp SPC>, <&kp ENT>;
+            binding = <&kp SPACE>, <&kp ENTER>;
             }; 
         td3: tap_dance_3 {
             compatible = "zmk,behavior-tap-dance";
