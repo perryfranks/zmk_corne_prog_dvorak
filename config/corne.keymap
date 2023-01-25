@@ -14,6 +14,8 @@
 #define BT 3
 
 / {
+
+// LAYERS
     conditional_layers {
         compatible = "zmk,conditional-layers";
         tri_layer {
@@ -22,20 +24,147 @@
         };
     };
 
+// BEHAVIOURS
+// TAP DANCES: 
+// put the &td? in the keymap part 
+// &td0 TAB ESC 
+// &td1 LSHIFT CAPSLOCK 
+// &td2 SPC ENT 
+// &tde SLash qmark
+// &td4 quote double_quote 
+// &td5 equal plus
+// &td6 backslash pipe 
+// &td7 minus underscore
+// &td8 semicolon colon 
+// &td9 comma less than 
+// &td10 period greater_than
+// &td11 grave tilde 
+// &td12 lalt gui 
+// &td13 q at@ 
+    behaviors{  
+        td0: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_0"; 
+            #binding-cells = <0>; 
+            tapping-term-ms = <200>; 
+            binding = <&kp TAB>, <&kp ESC>
+
+            }, 
+        td1: tap_dance_1 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_1"; 
+            #binding-cells = <0>; 
+            tapping-term-ms = <200>; 
+            binding = <&kp LSHIFT>, <&kp CAPSLOCK>
+            }, 
+        td2: tap_dance_2 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_2"; 
+            #binding-cells = <0>; 
+            tapping-term-ms = <200>; 
+            binding = <&kp SPC>, <&kp ENT>
+            }, 
+        td3: tap_dance_3 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_3"; 
+            #binding-cells = <0>; 
+            tapping-term-ms = <200>; 
+            binding = <&kp SLASH>, <&kp QMARK>
+            }, 
+        td4: tap_dance_4 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_4"; 
+            #binding-cells = <0>; 
+            tapping-term-ms = <200>; 
+            binding = <&kp QUOTE>, <&kp DOUBLE_QUOTE>
+            }, 
+        td5: tap_dance_5 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_5"; 
+            #binding-cells = <0>; 
+            tapping-term-ms = <200>; 
+            binding = <&kp EQUAL>, <&kp PLUS>
+            }, 
+        td6: tap_dance_6 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_6"; 
+            #binding-cells = <0>; 
+            tapping-term-ms = <200>; 
+            binding = <&kp BACKSLASH>, <&kp PIPE>
+            }, 
+        td7: tap_dance_7 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_7"; 
+            #binding-cells = <0>; 
+            tapping-term-ms = <200>; 
+            binding = <&kp MINUS>, <&kp UNDERSCORE>
+            }, 
+        td7: tap_dance_7 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_7"; 
+            #binding-cells = <0>; 
+            tapping-term-ms = <200>; 
+            binding = <&kp MINUS>, <&kp UNDERSCORE>
+            }, 
+        td8: tap_dance_8 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_8"; 
+            #binding-cells = <0>; 
+            tapping-term-ms = <200>; 
+            binding = <&kp SEMICOLON>, <&kp COLON>
+            }, 
+        td9: tap_dance_9 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_9"; 
+            #binding-cells = <0>; 
+            tapping-term-ms = <200>; 
+            binding = <&kp COMMA>, <&kp LESS_THAN>
+            }, 
+        td10: tap_dance_10 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_10"; 
+            #binding-cells = <0>; 
+            tapping-term-ms = <200>; 
+            binding = <&kp PERIOD>, <&kp GREATER_THAN>
+            }, 
+        td11: tap_dance_11 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_11"; 
+            #binding-cells = <0>; 
+            tapping-term-ms = <200>; 
+            binding = <&kp GRAVE>, <&kp TILDE>
+            },            
+
+        td12: tap_dance_12 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_12"; 
+            #binding-cells = <0>; 
+            tapping-term-ms = <200>; 
+            binding = <&kp LALT>, <&kp GUI>
+            },
+        td13: tap_dance_13 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_13"; 
+            #binding-cells = <0>; 
+            tapping-term-ms = <200>; 
+            binding = <&kp Q>, <&kp AT>
+            }            
+    };
+
         keymap {
                 compatible = "zmk,keymap";
 
                 default_layer {
 // -----------------------------------------------------------------------------------------
-// |  ESC |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | TAB  |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+// |  TAB:ESC | ;:':' | ,:< | .:> |  P  |  Y  |        | F  |  G   |  C  |  R  |  L  | BKSP |
+// | CTRL     |  A  |  O  |  E  |  U  |  I  |           |  D  |  H   |  T  |  N  |  S  |  DEL   |
+// | LSFT:CAP |':"  |  q:@| J   | K   |  X  |          |  B  |  M   |  W  |  V  |  /  | TAB  |
+//                            | GUI | LWR | SPC |   | ENT | RSE  | ALT |
                         bindings = <
-   &kp ESC   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-   &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &sk LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp TAB
-                  &kp LGUI &mo 1 &kp SPACE   &kp RET &mo 2 &kp RALT
+   &td0   &td8 &td9  &td10 &kp P &kp Y                  &kp F &kp G  &kp C     &kp R   &kp L    &kp BSPC
+   &kp LCTRL &kp A &kp O &kp E &kp U &kp I              &kp D &kp H  &kp T     &kp N   &kp S    &kp DEL
+   &td1 &td4 &td13 &kp J &kp K &kp X                    &kp B &kp M  &kp W &kp V &kp Z &kp TAB
+                  &tp12  &mo 1 &td2   &td2 &mo 2 &kp RALT
                         >;
                 };
                 lower_layer {
