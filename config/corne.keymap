@@ -13,6 +13,12 @@
 #define SYM 2
 #define BT 3
 
+
+// MACROS to make the the code easier to read
+#define TD_TAB &td0
+
+
+
 / {
 
 // LAYERS
@@ -26,21 +32,22 @@
 
 // BEHAVIOURS
 // TAP DANCES: 
-// put the &td? in the keymap part 
-// &td0 TAB ESC 
-// &td1 LSHIFT CAPSLOCK 
-// &td2 Space enter 
-// &tde SLash qmark
-// &td4 quote double_quote 
-// &td5 equal plus
-// &td6 backslash pipe 
-// &td7 minus underscore
-// &td8 semicolon colon 
-// &td9 comma less than 
-// &td10 period greater_than
-// &td11 grave tilde 
-// &td12 lalt gui 
-// &td13 q at@ 
+// put the &td0 part in the keymap part 
+// TD_TAB &td0 TAB ESC 
+// TD_CAPLOCK &td1 LSHIFT CAPSLOCK 
+// TD_SLSH &tde SLash qmark
+// TD_QUOTE &td4 quote double_quote 
+// TD_EQL &td5 equal plus
+// TD_BSLS &td6 backslash pipe 
+// TD_MINUS &td7 minus underscore
+// TD_SCLN &td8 semicolon colon 
+// TD_COMM &td9 comma less than 
+// TD_DOT &td10 period greater_than
+// TD_BACKF &td11 grave tilde 
+// TD_ALT &td12 lalt gui 
+// TD_ARR &td13 q at@ 
+// TD_SPC &td2 Space enter 
+
     behaviors{  
         td0: tap_dance_0 {
             compatible = "zmk,behavior-tap-dance";
