@@ -19,7 +19,7 @@
 
 // MACROS to make the the code easier to read
 #define TD_TAB &td0
-#define TD_CAPLOCk &td1
+#define TD_CAPLOCK &td1
 #define TD_SPC &td2
 #define TD_SLSH &td3
 #define TD_QUOTE &td4
