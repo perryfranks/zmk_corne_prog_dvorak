@@ -175,7 +175,7 @@
         };
 
         discord_deaf: discord_deaf{
-            label = "MC_discord_mute";
+            label = "MC_discord_deaf";
             compatile = "zmk,behavior-macro";
             #binding-cells = <0>; 
             tapping-term-ms = <200>; 
