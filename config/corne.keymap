@@ -173,6 +173,12 @@
             #binding-cells = <0>;
             bindings = <&macro_press &kp F13>;
         };
+        discord_deaf: discord_deaf{
+            label = "MC_discord_deaf";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp F14>;
+        };
 
 
 
