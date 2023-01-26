@@ -229,11 +229,11 @@
                 bindings = <&kp N4>,<&kp PLUS>;
                 mods=<(MOD_LSFT|MOD_RSFT)>;
         };
-        six_rbrc: six_rbrc {
+        six_rbkt: six_rbkt {
                 compatible = "zmk,behavior-mod-morph";
-                label="SIX_RBRC";
+                label="six_rbkt";
                 #binding-cells = <0>; 
-                bindings = <&kp N6>,<&kp RBRC>;
+                bindings = <&kp N6>,<&kp RBKT>;
                 mods=<(MOD_LSFT|MOD_RSFT)>;
         };
         eight_exlm: eight_exlm {
@@ -307,7 +307,7 @@
 // | SHFT |  $  |  &  |  #  | - _ | \ | |       |     |     |     |     |     |      |
 //                    | GUI |     | SPC |       | ENT |     | ALT |
                         bindings = <
-   &trans  &kp LBKT &kp LBRC &kp RBRC &kp LPAR &kp EQUAL            &kp EQUAL             &kp STAR &kp RPAR  &kp PLUS &kp RBKT &kp EXCL &trans    
+   &trans  &kp LBKT &kp LBRC &kp RBRC &kp LPAR &kp EQUAL            &kp STAR             &kp STAR &kp RPAR  &kp PLUS &kp RBKT &kp EXCL &trans    
    &kp LCTRL &kp TILDE   &kp PRCNT &kp GRAVE    TD_SLSH   TD_ATCAT             &trans &trans &trans        &trans &trans &trans
    &trans &kp DLLR   &kp AMPS &kp HASH   TD_MINUS          TD_BSLS             &trans &trans  &trans        &trans &trans &trans
                     	        &trans      &trans      &trans      &trans   &trans    &trans
