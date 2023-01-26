@@ -33,6 +33,8 @@
 #define TD_ALT &td12
 #define TD_ARR &td13
 
+// for the strict programmer-dvorak
+#define TD_ATCAT &td14
 / {
 
 
@@ -53,6 +55,7 @@
 // TD_ALT &td12 lalt gui 
 // TD_ARR &td13 q at@ 
 // TD_SPC &td2 Space enter 
+// TD_ATCAT &td14 at@ caret
 
     behaviors{  
         td0: tap_dance_0 {
@@ -162,6 +165,13 @@
             tapping-term-ms = <200>; 
             bindings = <&kp Q>, <&kp AT>;
             };
+        td14: tap_dance_14 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_14"; 
+            #binding-cells = <0>; 
+            tapping-term-ms = <200>; 
+            bindings = <&kp AT>, <&kp CARET>;
+            };
     };
 
     macros {
@@ -176,7 +186,7 @@
             label = "MC_discord_deaf";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp F14>;
+            bindings = <&macro_tap &kp F13>;
         };
     }; 
 
@@ -195,7 +205,7 @@
 // -----------------------------------------------------------------------------------------
 // |  TAB:ESC | ;:':' | ,:< | .:> |  P  |  Y  |        | F  |  G   |  C  |  R  |  L  | BKSP |
 // | CTRL     |  A  |  O  |  E  |  U  |  I  |           |  D  |  H   |  T  |  N  |  S  |  DEL   |
-// | LSFT:CAP |':"  |  q:@| J   | K   |  X  |          |  B  |  M   |  W  |  V  |  /  | TAB  |
+// | LSFT:CAP |':"  |  q:@| J   | K   |  X  |          |  B  |  M   |  W  |  V  |  Z  | TAB  |
 //                            | GUI | LWR | SPC |   | ENT | RSE  | ALT |
                         bindings = <
    TD_TAB     TD_SCLN  TD_COMM TD_DOT &kp P &kp Y                   &kp F &kp G  &kp C     &kp R   &kp L    &kp BSPC
@@ -211,24 +221,24 @@
 // | SHFT   |  F6  |  F7 |  F8 |  F9 |  F10|            |HOME | PGDN| PGUP| END |     |      |
 //                              |   |   |   |         |   |    |   |
                         bindings = <
-   &kp ESC    &kp N7    &kp N5  &kp N3  &kp N1  &kp N9                      &kp N0   &kp N2   &kp N4 &kp N6 &kp N8 &trans
+   &trans    &kp N7    &kp N5  &kp N3  &kp N1  &kp N9                      &kp N0   &kp N2   &kp N4 &kp N6 &kp N8 &trans
    &kp F11    &kp F1    &kp F2  &kp F3  &kp F4  &kp F5                      &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-   &kp LSHFT  &kp F6    &kp F7  &kp F8  &kp F9  &kp F10                     &kp HOME   &kp PG_DN   &kp PG_UP &kp END    &trans &trans
+   &trans  &kp F6    &kp F7  &kp F8  &kp F9  &kp F10                     &kp HOME   &kp PG_DN   &kp PG_UP &kp END    &trans &trans
                           	       &trans &trans &trans                     &trans  &trans   &trans
                         >;
                 };
 
                 raise_layer {
 // -----------------------------------------------------------------------------------------
-// |  ESC |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | DEL  |
-// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+// |  ESC |  [  |  {  |  }  |  (  |  =  |       |  *  |  )  |  +  |  ]  |  !  | DEL  |
+// | CTRL |  ~  |  %  |  `  | / ? | @ ^ |       |     |     |     |     |     |      |
+// | SHFT |  $  |  &  |  #  | - _ | \ | |       |     |     |     |     |     |      |
+//                    | GUI |     | SPC |       | ENT |     | ALT |
                         bindings = <
-   &kp  ESC  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp DEL    
-   &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
-   &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
-                    	     &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
+   &trans  &kp LBKT &kp LBRC &kp RBRC &kp LPAR    &kp EQUAL             &kp STAR &kp RPAR  &kp PLUS &kp RBKT &kp EXCL &kp DEL    
+   &kp LCTRL &TILDE   &PRCNT &GRAVE    &TD_SLSH   &TD_ATCAT             &trans &trans &trans        &trans &trans &trans
+   &trans &DLLR   &AMPS &HASH   &TD_MINUS          &TD_SCLN             &trans &trans  &trans        &trans &trans &trans
+                    	        &trans      &trans      &trans      &trans   &trans    &trans
                         >;
                 };
 
@@ -241,8 +251,8 @@
 //                    | GUI |     | SPC |   | ENT     |     | ALT |
                         bindings = <
    &kp ESC    &trans       &trans       &trans       &trans       &trans         &discord_deaf   &trans   &trans &trans    &trans &discord_mute
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp K_PREV &kp K_PP &kp K_NEXT &trans &trans
-   &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &kp K_MUTE   &kp K_VOL_DN   &kp K_VOL_UP &trans    &trans &trans
+   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp C_PREV &kp C_PP &kp C_NEXT &trans &trans
+   &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &kp C_MUTE   &kp C_VOL_DN   &kp C_VOL_UP &trans    &trans &trans
                           	        &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
                         >;
                 };
