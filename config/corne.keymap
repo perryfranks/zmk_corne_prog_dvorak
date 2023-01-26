@@ -179,7 +179,7 @@
             label = "MC_discord_mute";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp F13> 
+            bindings = <&kp F13>;
         };
 
 
