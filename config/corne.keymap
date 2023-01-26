@@ -172,6 +172,19 @@
             };
     };
 
+    // macros
+    macros {
+
+        discord_mute: discord_mute{
+            label = "MC_discord_mute";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp F13> 
+        };
+
+
+    }; 
+
         keymap {
                 compatible = "zmk,keymap";
 
@@ -215,16 +228,18 @@
                     	     &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
                         >;
                 };
-                bt_layer {
+
+                bt_media_layer {
+// BT functions, media, and discord hotkeys (should add teams as well) 
 // -----------------------------------------------------------------------------------------
-// |  ESC |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | DEL  |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |HOME | PGDN| PGUP| END |     |      |
+// |  ESC |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | DMUTE  |
+// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | PRV |  Play/P | NXT |     |      |
+// | SHFT |     |     |     |     |     |   | MUTE| VOL-| VOL+|  |     |      |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &kp ESC    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp DEL
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-   &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &kp HOME   &kp PG_DN   &kp PG_UP &kp END    &trans &trans
+   &kp ESC    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &discord_mute
+   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp K_PREV &kp K_PP &kp K_NEXT &trans &trans
+   &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &kp k_MUTE   &kp K_VOL_DN   &kp K_VOL_UP &trans    &trans &trans
                           	        &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
                         >;
                 };
