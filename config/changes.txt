@@ -1,4 +1,5 @@
-move bluetooth settings to be harder to reach (hold down both?)
+
 maybe make the layout keys be on hold 
-fkeys somewhere? 
-set sleep mode in the konfig 
+
+
+WE PROB NEED A GAME LAYOUT 

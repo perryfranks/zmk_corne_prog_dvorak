@@ -172,6 +172,17 @@
             tapping-term-ms = <TAP_SPEED>; 
             bindings = <&kp AT>, <&kp CARET>;
             };
+             
+        // num shift behavior  
+        {
+            zero_s: zero_star { 
+                    compatible = "vmk,behavior-mod-morph";
+                    label="ZERO_STAR";
+                    #binding-cells = <0>
+                    bindings = <&kp ESC>, <&kp STAR>;  
+                    mods=<(MOD_LSFT|MOD_RSFT)>CONFIG_ZMK_WIDGET_BATTERY_STATUS_SHOW_PERCENTAGE	
+                }; 
+        };
     };
 
     macros {
