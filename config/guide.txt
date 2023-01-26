@@ -1,42 +1,32 @@
-    
-// TAP DANCES: 
-// put the &td? in the keymap part 
-// &td0 TAB ESC 
-// &td1 LSHIFT CAPSLOCK 
-// &td2 Space enter 
-// &tde SLash qmark
-// &td4 quote double_quote 
-// &td5 equal plus
-// &td6 backslash pipe 
-// &td7 minus underscore
-// &td8 semicolon colon 
-    
-// &td11 grave tilde 
-// &td12 lalt gui 
-// &td13 q at@ 
+   PROGRAMMER-DVORAK 
 
-                default_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB:ESC | ;:':' | ,:< | .:> |  P  |  Y  |        | F  |  G   |  C  |  R  |  L  | BKSP |
-// | CTRL     |  A  |  O  |  E  |  U  |  I  |           |  D  |  H   |  T  |  N  |  S  |  DEL   |
-// | LSFT:CAP |':"  |  q:@| J   | K   |  X  |          |  B  |  M   |  W  |  V  |  /  | TAB  |
-//                            | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+// |  TAB:ESC | ; : | , < | . > |  P  |  Y  |        | F   |  G   |  C  |  R  |  L  | BKSP |
+// | CTRL     |  A  |  O  |  E  |  U  |  I  |        |  D  |  H   |  T  |  N  |  S  | DEL  |
+// | LSFT:CAP | ' " | q @ |  J  |  K  |  X  |        |  B  |  M   |  W  |  V  |  Z  | TAB  |
+//                           | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+
+
+                Numbers, navigation, and FUN keys 
                 lower_layer {
 // -----------------------------------------------------------------------------------------
-// |  ESC |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | DEL  |
-// |      |     |     |     |     |     |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |HOME | PGDN| PGUP| END |     |      |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+// |  ESC   |  7   |  5  |  3  |  1  |  9  |            |  0  |  2  |  4  |  6  |  8  |      |
+// | F11    |  F1  |  F2 |  F3 |  F4 |  F5 |            | LFT | DWN |  UP | RGT |     |      |
+// | SHFT   |  F6  |  F7 |  F8 |  F9 |  F10|            |HOME | PGDN| PGUP| END |     |      |
+//                              |   |   |   |         |   |    |   |
 
+                SYMBOLS 
                 raise_layer {
 // -----------------------------------------------------------------------------------------
-// |  ESC |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | DEL  |
-// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+// |  ESC |  [  |  {  |  }  |  (  |  =  |       |  *  |  )  |  +  |  ]  |  !  | DEL  |
+// | CTRL |  ~  |  %  |  `  | / ? | @ ^ |       |     |     |     |     |     |      |
+// | SHFT |  $  |  &  |  #  | - _ | \ | |       |     |     |     |     |     |      |
+//                    | GUI |     | SPC |       | ENT |     | ALT |
 
-                bt_layer {
+// BT functions, media, and discord hotkeys (should add teams as well) 
+                bt_media_layer {
 // -----------------------------------------------------------------------------------------
-// |  ESC |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | DEL  |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |HOME | PGDN| PGUP| END |     |      |
+// |  ESC |     |     |     |     |     |   |  DDEAF  |     |     |     |     | DMUTE  |
+// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT     | PRV |  Play/P | NXT |     |      |
+// | SHFT |     |     |     |     |     |   | MUTE    | VOL-| VOL+|  |     |      |
+//                    | GUI |     | SPC |   | ENT     |     | ALT |
