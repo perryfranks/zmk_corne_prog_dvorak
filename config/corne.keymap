@@ -232,7 +232,7 @@
 // | SHFT   |  F6  |  F7 |  F8 |  F9 |  F10|            |HOME | PGDN| PGUP| END |     |      |
 //                              |   |   |   |         |   |    |   |
                         bindings = <
-   &trans    &kp N7    &kp N5  &kp N3  &kp N1  &kp N9                      ZERO_STAR   &kp N2   &kp N4 &kp N6 &kp N8 &trans
+   &trans    &kp N7    &kp N5  &kp N3  &kp N1  &kp N9                      &zero_s   &kp N2   &kp N4 &kp N6 &kp N8 &trans
    &kp F11    &kp F1    &kp F2  &kp F3  &kp F4  &kp F5                      &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
    &trans  &kp F6    &kp F7  &kp F8  &kp F9  &kp F10                     &kp HOME   &kp PG_DN   &kp PG_UP &kp END    &trans &trans
                           	       &trans &trans &trans                     &trans  &trans   &trans
