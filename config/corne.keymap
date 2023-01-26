@@ -164,7 +164,6 @@
             };
     };
 
-    // macros
     macros {
 
         discord_mute: discord_mute{
@@ -179,9 +178,6 @@
             #binding-cells = <0>;
             bindings = <&macro_press &kp F14>;
         };
-
-
-
     }; 
 
     // LAYERS
@@ -210,12 +206,12 @@
                 };
                 lower_layer {
 // -----------------------------------------------------------------------------------------
-// |  ESC   |  1   |  2  |  3  |  4  |  5  |            |  6  |  7  |  8  |  9  |  0  |      |
+// |  ESC   |  7   |  5  |  3  |  1  |  9  |            |  0  |  2  |  4  |  6  |  8  |      |
 // | F11    |  F1  |  F2 |  F3 |  F4 |  F5 |            | LFT | DWN |  UP | RGT |     |      |
 // | SHFT   |  F6  |  F7 |  F8 |  F9 |  F10|            |HOME | PGDN| PGUP| END |     |      |
 //                              |   |   |   |         |   |    |   |
                         bindings = <
-   &kp ESC    &kp N1    &kp N2  &kp N3  &kp N4  &kp N5                      &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &trans
+   &kp ESC    &kp N7    &kp N5  &kp N3  &kp N1  &kp N9                      &kp N0   &kp N2   &kp N4 &kp N6 &kp N8 &trans
    &kp F11    &kp F1    &kp F2  &kp F3  &kp F4  &kp F5                      &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
    &kp LSHFT  &kp F6    &kp F7  &kp F8  &kp F9  &kp F10                     &kp HOME   &kp PG_DN   &kp PG_UP &kp END    &trans &trans
                           	       &trans &trans &trans                     &trans  &trans   &trans
@@ -239,12 +235,12 @@
 // BT functions, media, and discord hotkeys (should add teams as well) 
                 bt_media_layer {
 // -----------------------------------------------------------------------------------------
-// |  ESC |  1  |  2  |  3  |  4  |  5  |   |  DDEAF  |  7  |  8  |  9  |  0  | DMUTE  |
+// |  ESC |     |     |     |     |     |   |  DDEAF  |     |     |     |     | DMUTE  |
 // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT     | PRV |  Play/P | NXT |     |      |
 // | SHFT |     |     |     |     |     |   | MUTE    | VOL-| VOL+|  |     |      |
 //                    | GUI |     | SPC |   | ENT     |     | ALT |
                         bindings = <
-   &kp ESC    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &discord_deaf   &kp N7   &kp N8 &kp N9    &kp N0 &discord_mute
+   &kp ESC    &trans       &trans       &trans       &trans       &trans         &discord_deaf   &trans   &trans &trans    &trans &discord_mute
    &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp K_PREV &kp K_PP &kp K_NEXT &trans &trans
    &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &kp K_MUTE   &kp K_VOL_DN   &kp K_VOL_UP &trans    &trans &trans
                           	        &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
