@@ -180,7 +180,7 @@
                 label="ZERO_STAR";
                 #binding-cells = <0>;
                 bindings = <&kp ESC>, <&kp STAR>;  
-                mods=<(MOD_LSFT|MOD_RSFT)>CONFIG_ZMK_WIDGET_BATTERY_STATUS_SHOW_PERCENTAGE	
+                mods=<(MOD_LSFT|MOD_RSFT)>;
             }; 
         //};
     };
