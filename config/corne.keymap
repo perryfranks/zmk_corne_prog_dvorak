@@ -15,7 +15,7 @@
 
 // TAP_DANCE settings
 // could add a define for the tapping ms here
-#define TAP_SPEED 150
+#define TAP_SPEED 200
 
 // MACROS to make the the code easier to read
 #define TD_TAB &td0

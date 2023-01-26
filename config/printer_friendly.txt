@@ -1,0 +1,28 @@
+   PROGRAMMER-DVORAK 
+
+// |TAB:ESC | ; : | , < | . > |  P  |  Y  |   | F   |  G   |  C  |  R  |  L  | BKSP|
+// |CTRL    |  A  |  O  |  E  |  U  |  I  |   |  D  |  H   |  T  |  N  |  S  | DEL |
+// |SFT:CAP | ' " | q @ |  J  |  K  |  X  |   |  B  |  M   |  W  |  V  |  Z  | TAB |
+//                      | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+
+
+                 
+lower_layer: numbers, navigation, and FUN keys
+// |ESC    |  7   |  5  |  3  |  1  |  9  |   |  0  |  2  |  4  |  6  |  8  |     |
+// |F11    |  F1  |  F2 |  F3 |  F4 |  F5 |   | LFT | DWN |  UP | RGT |     |     |
+// |SHFT   |  F6  |  F7 |  F8 |  F9 |  F10|   |HOME | PGDN| PGUP| END |     |     |
+//                      |     |     |     |   |     |     |     |
+
+
+raise_layer: symbols 
+// |ESC    |  [   |  {  |  }  |  (  |  =  |   |  *  |  )  |  +  |  ]  |  !  | DEL |
+// |CTRL   |  ~   |  %  |  `  | / ? | @ ^ |   |     |     |     |     |     |     |
+// |SHFT   |  $   |  &  |  #  | - _ | \ | |   |     |     |     |     |     |     |
+//                      | GUI |     | SPC |   | ENT |     | ALT |
+
+
+bt_media_layer: BT functions, media, and discord hotkeys (should add teams as well)
+// |ESC    |      |     |     |     |     |   |DDEAF|     |     |     |     |DMUTE|
+// |BTCLR  | BT1  | BT2 | BT3 | BT4 | BT5 |   | LFT | PRV | PP  | NXT |     |     |
+// |SHFT   |      |     |     |     |     |   | MUTE| V-  | V+  |     |     |     |
+//                      | GUI |     | SPC |   | ENT |     | ALT |
