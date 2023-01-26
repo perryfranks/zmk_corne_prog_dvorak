@@ -179,7 +179,34 @@
                 bindings = <&kp N0>, <&kp STAR>;  
                 mods=<(MOD_LSFT|MOD_RSFT)>;
             }; 
-
+        two_par: two_paren {
+                compatible = "zmk,behavior-mod-morph";
+                label="TWO_PAR";
+                #binding-cells = <0>; 
+                bindings = <&kp N2><&kp RPAR>;
+                mods=<(MOD_LSFT|MOD_RSFT)>;
+        };
+        four_pl: four_plus {
+                compatible = "zmk,behavior-mod-morph";
+                label="FOUR_PLUS";
+                #binding-cells = <0>; 
+                bindings = <&kp N4><&kp PLUS>;
+                mods=<(MOD_LSFT|MOD_RSFT)>;
+        };
+        six_rbrc: six_rbrc {
+                compatible = "zmk,behavior-mod-morph";
+                label="SIX_RBRC";
+                #binding-cells = <0>; 
+                bindings = <&kp N6><&kp RBRC>;
+                mods=<(MOD_LSFT|MOD_RSFT)>;
+        };
+        eight_exlm: eight_exlm {
+                compatible = "zmk,behavior-mod-morph";
+                label="EIGHT_EXLM";
+                #binding-cells = <0>; 
+                bindings = <&kp N8><&kp EXCL>;
+                mods=<(MOD_LSFT|MOD_RSFT)>;
+        };
         //};
     };
 
