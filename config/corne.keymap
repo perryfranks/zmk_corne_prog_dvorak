@@ -236,8 +236,8 @@
 //                    | GUI |     | SPC |       | ENT |     | ALT |
                         bindings = <
    &trans  &kp LBKT &kp LBRC &kp RBRC &kp LPAR    &kp EQUAL             &kp STAR &kp RPAR  &kp PLUS &kp RBKT &kp EXCL &kp DEL    
-   &kp LCTRL &TILDE   &PRCNT &GRAVE    &TD_SLSH   &TD_ATCAT             &trans &trans &trans        &trans &trans &trans
-   &trans &DLLR   &AMPS &HASH   &TD_MINUS          &TD_SCLN             &trans &trans  &trans        &trans &trans &trans
+   &kp LCTRL &TILDE   &PRCNT &GRAVE    TD_SLSH   TD_ATCAT             &trans &trans &trans        &trans &trans &trans
+   &trans &DLLR   &AMPS &HASH   TD_MINUS          TD_SCLN             &trans &trans  &trans        &trans &trans &trans
                     	        &trans      &trans      &trans      &trans   &trans    &trans
                         >;
                 };
