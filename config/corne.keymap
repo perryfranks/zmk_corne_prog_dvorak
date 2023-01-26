@@ -176,7 +176,7 @@
                 compatible = "zmk,behavior-mod-morph";
                 label="ZERO_STAR";
                 #binding-cells = <0>;
-                bindings = <&kp ESC>, <&kp STAR>;  
+                bindings = <&kp N0>, <&kp STAR>;  
                 mods=<(MOD_LSFT|MOD_RSFT)>;
             }; 
 
