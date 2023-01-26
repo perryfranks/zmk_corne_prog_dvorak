@@ -12,6 +12,7 @@
 #define NAV 1
 #define SYM 2
 #define BT 3
+#define GAME 4 
 
 // TAP_DANCE settings
 // could add a define for the tapping ms here
@@ -307,9 +308,9 @@
 // | SHFT |  $  |  &  |  #  | - _ | \ | |       |     |     |     |     |     |      |
 //                    | GUI |     | SPC |       | ENT |     | ALT |
                         bindings = <
-   &trans  &kp LBKT &kp LBRC &kp RBRC &kp LPAR &kp EQUAL            &kp STAR             &kp STAR &kp RPAR  &kp PLUS &kp RBKT &kp EXCL &trans    
-   &kp LCTRL &kp TILDE   &kp PRCNT &kp GRAVE    TD_SLSH   TD_ATCAT             &trans &trans &trans        &trans &trans &trans
-   &trans &kp DLLR   &kp AMPS &kp HASH   TD_MINUS          TD_BSLS             &trans &trans  &trans        &trans &trans &trans
+   &trans  &kp LBKT &kp LBRC &kp RBRC &kp LPAR &kp EQUAL            &kp STAR       &kp STAR &kp RPAR  &kp PLUS &kp RBKT &kp EXCL &trans    
+   &kp LCTRL &kp TILDE   &kp PRCNT &kp GRAVE    TD_SLSH   TD_ATCAT                 &trans &trans &trans    &trans &trans &trans
+   &trans &kp DLLR   &kp AMPS &kp HASH   TD_MINUS          TD_BSLS                 &trans &trans  &trans   &trans &trans &trans
                     	        &trans      &trans      &trans      &trans   &trans    &trans
                         >;
                 };
@@ -317,16 +318,29 @@
 // BT functions, media, and discord hotkeys (should add teams as well) 
                 bt_media_layer {
 // -----------------------------------------------------------------------------------------
-// |  ESC |     |     |     |     |     |   |  DDEAF  |     |     |     |     | DMUTE  |
+// |  ESC |     |     |     |     | game|   |  DDEAF  |     |     |     |     | DMUTE  |
 // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT     | PRV |  Play/P | NXT |     |      |
 // | SHFT |     |     |     |     |     |   | MUTE    | VOL-| VOL+|  |     |      |
 //                    | GUI |     | SPC |   | ENT     |     | ALT |
                         bindings = <
-   &kp ESC    &trans       &trans       &trans       &trans       &trans         &discord_deaf   &trans   &trans &trans    &trans &discord_mute
+   &kp ESC    &trans       &trans       &trans       &trans       &to 4          &discord_deaf   &trans   &trans &trans    &trans &discord_mute
    &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp C_PREV &kp C_PP &kp C_NEXT &trans &trans
    &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &kp C_MUTE   &kp C_VOL_DN   &kp C_VOL_UP &trans    &trans &trans
                           	        &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
                         >;
                 };
+                game {
+// -----------------------------------------------------------------------------------------
+// |  ESC |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
+// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
+// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | TAB  |
+//                    | GUI | LWR | SPC |   | ENT | DFLT | ALT |
+                        bindings = <
+   &kp ESC   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
+   &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
+   &sk LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp TAB
+                  &kp LGUI &mo 1 &kp SPACE   &kp RET &to 0 &kp RALT
+                        >;
+                }
         };
 };
