@@ -341,6 +341,6 @@
    &sk LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp TAB
                   &kp LGUI &mo 1 &kp SPACE   &kp RET &to 0 &kp RALT
                         >;
-                }
+                };
         };
 };
