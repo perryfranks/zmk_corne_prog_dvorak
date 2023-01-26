@@ -179,7 +179,7 @@
             compatile = "zmk,behavior-macro";
             #binding-cells = <0>; 
             tapping-term-ms = <200>; 
-            bindings = <&macro_press &kp F14>
+            bindings = <&macro_press &kp F14>;
         };
 
 
