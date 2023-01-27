@@ -276,12 +276,12 @@
 
                 default_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB:ESC | ;:':' | ,:< | .:> |  P  |  Y  |        | F  |  G   |  C  |  R  |  L  | BKSP |
-// | CTRL     |  A  |  O  |  E  |  U  |  I  |           |  D  |  H   |  T  |  N  |  S  |  DEL   |
-// | LSFT:CAP |':"  |  q:@| J   | K   |  X  |          |  B  |  M   |  W  |  V  |  Z  | TAB  |
+// |TAB:ESC   | ; : | , < | . > |  P  |  Y  |         | F   |  G   |  C  |  R  |  L  | BKSP |
+// | CTRL     |  A  |  O  |  E  |  U  |  I  |         |  D  |  H   |  T  |  N  |  S  |  DEL |
+// | LSFT:CAP |' "  | q @ | J   | K   |  X  |         |  B  |  M   |  W  |  V  |  Z  | TAB  |
 //                            | GUI | LWR | SPC |   | ENT | RSE  | ALT |
                         bindings = <
-   TD_TAB     TD_SCLN  TD_COMM TD_DOT &kp P &kp Y                   &kp F &kp G  &kp C     &kp R   &kp L    &kp BSPC
+   TD_TAB     (TD_SCLN)  (TD_COMM) TD_DOT &kp P &kp Y                   &kp F &kp G  &kp C     &kp R   &kp L    &kp BSPC
    &kp LCTRL  &kp A    &kp O   &kp E  &kp U &kp I                   &kp D &kp H  &kp T     &kp N   &kp S    &kp DEL
    TD_CAPLOCK TD_QUOTE TD_ARR  &kp J  &kp K &kp X                   &kp B &kp M  &kp W     &kp V   &kp Z    &kp TAB
                              TD_ALT  &mo 1 TD_SPC                   TD_SPC &mo 2 &kp RALT
@@ -318,17 +318,19 @@
 // BT functions, media, and discord hotkeys (should add teams as well) 
                 bt_media_layer {
 // -----------------------------------------------------------------------------------------
-// |  ESC |     |     |     |     | game|   |  DDEAF  |     |     |     |     | DMUTE  |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT     | PRV |  Play/P | NXT |     |      |
-// | SHFT |     |     |     |     |     |   | MUTE    | VOL-| VOL+|  |     |      |
+// |  ESC |     |     |     |     | game|   | DDEAF   |     |         |     |   | DMUTE|
+// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT     | PRV |  Play/P | NXT |   |      |
+// | SHFT |     |     |     |     |     |   | MUTE    | VOL-| VOL+|   |     |   |      |
 //                    | GUI |     | SPC |   | ENT     |     | ALT |
                         bindings = <
-   &kp ESC    &trans       &trans       &trans       &trans       &to 4          &discord_deaf   &trans   &trans &trans    &trans &discord_mute
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp C_PREV &kp C_PP &kp C_NEXT &trans &trans
-   &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &kp C_MUTE   &kp C_VOL_DN   &kp C_VOL_UP &trans    &trans &trans
-                          	        &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
+   &kp ESC    &trans       &trans       &trans       &trans       &to 4                 &discord_deaf   &trans         &trans       &trans     &trans &discord_mute
+   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4          &kp LEFT        &kp C_PREV     &kp C_PP     &kp C_NEXT &trans &trans
+   &kp LSHFT  &trans       &trans       &trans       &trans       &trans                &kp C_MUTE      &kp C_VOL_DN   &kp C_VOL_UP &trans     &trans &trans
+                          	              &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
                         >;
-                };
+                }; 
+
+// A set of layers for qwerty / games 
                 game {
 // -----------------------------------------------------------------------------------------
 // |  ESC |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
