@@ -15,48 +15,29 @@
 #define GAME 4 
 
 // TAP_DANCE settings
-// could add a define for the tapping ms here
 #define TAP_SPEED 200
 
 // MACROS to make the the code easier to read
-#define TD_TAB &td0
-#define TD_CAPLOCK &td1
-#define TD_SPC &td2
-#define TD_SLSH &td3
-#define TD_QUOTE &td4
-#define TD_EQL &td5
-#define TD_BSLS &td6
-#define TD_MINUS &td7
-#define TD_SCLN &td8
-#define TD_COMM &td9
-#define TD_DOT &td10
-#define TD_BACKF &td11
-#define TD_ALT &td12
-#define TD_ARR &td13
+// name reference key1 key2 
+// inlcude name or reference in keymap
+#define TD_TAB      &td0    // TAB ESC
+#define TD_CAPLOCK  &td1    // LSHIFT CAPSLOCK 
+#define TD_SPC      &td2    // SPACE ENTER 
+#define TD_SLSH     &td3    // SLASH QMARK
+#define TD_QUOTE    &td4    // QUOTE DOUBLE_QUOTES
+#define TD_EQL      &td5    // EQUAL PLUS
+#define TD_BSLS     &td6    // BACKSLASH PIPE 
+#define TD_MINUS    &td7    // MINUS UNDERSCORE
+#define TD_SCLN     &td8    // SEMICOLON COLON 
+#define TD_COMM     &td9    // COMMA LESS_THAN 
+#define TD_DOT      &td10   // PERIOD GREATER_THAN 
+#define TD_BACKF    &td11   // GRAVE TILDE
+#define TD_ALT      &td12   // LALT GUI
+#define TD_ARR      &td13   // Q AT (@)
+#define TD_ATCAT    &td14   // AT CARET 
 
-// for the strict programmer-dvorak
-#define TD_ATCAT &td14
 / {
 
-
-// BEHAVIOURS
-// TAP DANCES: 
-// put the &td0 part in the keymap part 
-// TD_TAB &td0 TAB ESC 
-// TD_CAPLOCK &td1 LSHIFT CAPSLOCK 
-// TD_SLSH &td3 SLash qmark
-// TD_QUOTE &td4 quote double_quote 
-// TD_EQL &td5 equal plus
-// TD_BSLS &td6 backslash pipe 
-// TD_MINUS &td7 minus underscore
-// TD_SCLN &td8 semicolon colon 
-// TD_COMM &td9 comma less than 
-// TD_DOT &td10 period greater_than
-// TD_BACKF &td11 grave tilde 
-// TD_ALT &td12 lalt gui 
-// TD_ARR &td13 q at@ 
-// TD_SPC &td2 Space enter 
-// TD_ATCAT &td14 at@ caret
 
     behaviors{  
         td0: tap_dance_0 {
@@ -247,22 +228,6 @@
         //};
     };
 
-    macros {
-
-        discord_mute: discord_mute{
-            label = "MC_discord_mute";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &kp F13>;
-        };
-        discord_deaf: discord_deaf{
-            label = "MC_discord_deaf";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_tap &kp F13>;
-        };
-    }; 
-
     // LAYERS
     conditional_layers {
         compatible = "zmk,conditional-layers";
@@ -279,9 +244,9 @@
 // |TAB:ESC   | ; : | , < | . > |  P  |  Y  |         | F   |  G   |  C  |  R  |  L  | BKSP |
 // | CTRL     |  A  |  O  |  E  |  U  |  I  |         |  D  |  H   |  T  |  N  |  S  |  DEL |
 // | LSFT:CAP |' "  | q @ | J   | K   |  X  |         |  B  |  M   |  W  |  V  |  Z  | TAB  |
-//                            | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+//                        | GUI | LWR | SPC |         | ENT | RSE  | ALT |
                         bindings = <
-   TD_TAB     (TD_SCLN)  (TD_COMM) TD_DOT &kp P &kp Y                   &kp F &kp G  &kp C     &kp R   &kp L    &kp BSPC
+   TD_TAB     TD_SCLN  TD_COMM TD_DOT &kp P &kp Y                   &kp F &kp G  &kp C     &kp R   &kp L    &kp BSPC
    &kp LCTRL  &kp A    &kp O   &kp E  &kp U &kp I                   &kp D &kp H  &kp T     &kp N   &kp S    &kp DEL
    TD_CAPLOCK TD_QUOTE TD_ARR  &kp J  &kp K &kp X                   &kp B &kp M  &kp W     &kp V   &kp Z    &kp TAB
                              TD_ALT  &mo 1 TD_SPC                   TD_SPC &mo 2 &kp RALT
@@ -292,12 +257,12 @@
 // |  ESC   |  7   |  5  |  3  |  1  |  9  |            |  0  |  2  |  4  |  6  |  8  |      |
 // | F11    |  F1  |  F2 |  F3 |  F4 |  F5 |            | LFT | DWN |  UP | RGT |     |      |
 // | SHFT   |  F6  |  F7 |  F8 |  F9 |  F10|            |HOME | PGDN| PGUP| END |     |      |
-//                              |   |   |   |         |   |    |   |
+//                       |     |     |     |            |     |     |     |
                         bindings = <
-   &trans  &seven_lbkt &five_lbrc &three_rbrc &one_lpar &nine_equal                     &zero_s   &two_par      &four_pl &six_rbkt &eight_exlm &trans
-   &kp F11    &kp F1    &kp F2  &kp F3  &kp F4  &kp F5                      &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-   &trans  &kp F6    &kp F7  &kp F8  &kp F9  &kp F10                     &kp HOME   &kp PG_DN   &kp PG_UP &kp END    &trans &trans
-                          	       &trans &trans &trans                     &trans  &trans   &trans
+   &trans     &seven_lbkt   &five_lbrc  &three_rbrc &one_lpar   &nine_equal          &zero_s    &two_par    &four_pl    &six_rbkt   &eight_exlm &trans
+   &kp F11    &kp F1        &kp F2      &kp F3      &kp F4      &kp F5               &kp LEFT   &kp DOWN    &kp UP      &kp RIGHT   &trans      &trans
+   &trans     &kp F6        &kp F7      &kp F8      &kp F9      &kp F10              &kp HOME   &kp PG_DN   &kp PG_UP   &kp END     &trans      &trans
+                          	            &trans      &trans      &trans               &trans     &trans      &trans
                         >;
                 };
 
@@ -350,7 +315,7 @@
 // |  ESC   |  7   |  5  |  3  |  1  |  9  |            |  0  |  2  |  4  |  6  |  8  |      |
 // | F11    |  F1  |  F2 |  F3 |  F4 |  F5 |            | LFT | DWN |  UP | RGT |     |      |
 // | SHFT   |  F6  |  F7 |  F8 |  F9 |  F10|            |HOME | PGDN| PGUP| END |     |      |
-//                              |   |   |   |         |   |    |   |
+//                       |     |     |     |            |     |     |     |
                         bindings = <
    &trans  &seven_lbkt &five_lbrc &three_rbrc &one_lpar &nine_equal                     &zero_s   &two_par      &four_pl &six_rbkt &eight_exlm &trans
    &kp F11    &kp F1    &kp F2  &kp F3  &kp F4  &kp F5                      &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
@@ -366,10 +331,10 @@
 // | SHFT |  $  |  &  |  #  | - _ | \ | |       |     |     |     |     |     |  RST |
 //                    | GUI |     | SPC |       | ENT |     | ALT |
                         bindings = <
-   &trans  &kp LBKT &kp LBRC &kp RBRC &kp LPAR &kp EQUAL                           &kp STAR &kp RPAR  &kp PLUS &kp RBKT &kp EXCL &trans    
-   &kp LCTRL &kp TILDE   &kp PRCNT &kp GRAVE    TD_SLSH   TD_ATCAT                 &trans &trans &trans    &trans &trans &trans
-   &trans &kp DLLR   &kp AMPS &kp HASH   TD_MINUS          TD_BSLS                 &trans &trans  &trans   &trans &trans &to 0
-                    	        &trans      &trans      &trans      &trans   &trans    &trans
+   &trans      &kp LBKT     &kp LBRC    &kp RBRC    &kp LPAR    &kp EQUAL           &kp STAR    &kp RPAR    &kp PLUS    &kp RBKT    &kp EXCL    &trans    
+   &kp LCTRL   &kp TILDE    &kp PRCNT   &kp GRAVE   TD_SLSH     TD_ATCAT            &trans      &trans      &trans      &trans      &trans      &trans
+   &trans      &kp DLLR     &kp AMPS    &kp HASH    TD_MINUS    TD_BSLS             &trans      &trans      &trans      &trans      &trans      &to 0
+                    	                &trans      &trans      &trans              &trans      &trans      &trans
                         >;
                 };
  
