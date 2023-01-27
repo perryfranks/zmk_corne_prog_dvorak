@@ -1,14 +1,18 @@
-# ZMK Programmer
+# ZMK Corne V3 Programmer Dvorak Layout
 
-Foobar is a Python library for dealing with word pluralization.
+A simple but complete implementation of the Programmer Dvorak layout by Roland Kaufmann in the ZMK framework for the spit keyboard the Corne V3 by foostan. 
 
+This was made by referencing [this](https://github.com/JReneHS/crkb_conf/tree/main/rene_prog_dvorak) layout by JReneHS. Apart from this I found little resources, especially for ZMK for this layout so I have dicided to host mine. 
+
+### Deviations from the original layout: 
+Apart from some adjustments made to transfer the layout to smaller number of keys. The main deviation is in the modeling of the number/symbol keys still being SHIFT + Number = SYMBOL instead of SHIFT + SYMBOL = NUMBER. This was mainly a consideration for one handed use as symbols and numbers are seperated by different layers already. 
+
+This can be altered by changing the [mod-morph](https://zmk.dev/docs/behaviors/mod-morph) definitions and swapping the order of the keys in the bindings section and double-checking their placement. 
+
+    bindings = <&kp N7>, <&kp LBKT>;  --> bindings = <&kp LBKT>, <&kp N7>;
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
-
-```bash
-pip install foobar
-```
+Refer to the ZMK getting started instruction for the installation & flashing process: https://zmk.dev/docs. From their corne.keymap can be simply copy in 
 
 ## Usage
 
@@ -24,13 +28,21 @@ foobar.pluralize('goose')
 # returns 'phenomenon'
 foobar.singularize('phenomena')
 ```
+## Credits & References
+ 
+Programmer-Dvorak Layout: https://www.kaufmann.no/roland/dvorak/
 
+Original layout by [Juan René Hernández Sánchez](https://github.com/JReneHS) (JReneHS): https://github.com/JReneHS/crkb_conf/tree/main/rene_prog_dvorak
+
+ZMK: https://zmk.dev
+
+Corne keyboard by [Kosuke Adachi](https://github.com/foostan) (foostan): https://github.com/foostan/crkbd
+ 
+
+ 
 ## Contributing
 
-Pull requests are welcome. For major changes, please open an issue first
-to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
+Pull requests are welcome. This was a simple layout I wanted without knowing too much about ZMK. Expansions, remixes and so on are welcome as well as publish your own repos.  
 
 ## License
 
