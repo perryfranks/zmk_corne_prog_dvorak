@@ -9,7 +9,7 @@ This was made by referencing [this](https://github.com/JReneHS/crkb_conf/tree/ma
 I have included a primitive layout diagram for reference in the config folder, guide.txt and print_friendly.txt.
 
 ### Deviations from the original layout: 
-Apart from some adjustments made to transfer the layout to smaller number of keys. The main deviation is in the modelling of the number/symbol keys still being SHIFT + Number = SYMBOL instead of SHIFT + SYMBOL = NUMBER. This was mainly a consideration for one handed use as symbols and numbers are separated by different layers already. 
+Apart from some adjustments made to transfer the layout to a smaller number of keys. The main deviation is in the modelling of the number/symbol keys still being SHIFT + Number = SYMBOL instead of SHIFT + SYMBOL = NUMBER. This was mainly a consideration for one handed use as symbols and numbers are separated by different layers already. 
 
 This can be altered by changing the [mod-morph](https://zmk.dev/docs/behaviors/mod-morph) definitions and swapping the order of the keys in the bindings section and double-checking their placement. 
 
@@ -26,9 +26,9 @@ There are several ways to start using this package.
 
 I recommend printing off a copy of the layout guide if learning dvorak. 
 
-This keymap features a number of Tap-dance & mod-morph defines as well as a number #defined values to make setting up the layout more readable and concise. For the most part the defined functions can be included in the keymap without needing to understand their implementations. Just their behaviour and [key codes](https://zmk.dev/docs/codes) they put out. 
+This keymap features a number of tap-dance & mod-morph defines as well as a number of #defined values to make the layout more readable and concise. For the most part the defined functions can be included in the keymap without needing to understand their implementations. Just their behaviour and [key codes](https://zmk.dev/docs/codes) outputed. 
 
-Refer to the comments in corne.keymap full definitions
+Refer to the comments in corne.keymap for full definitions
 ```
 // include name or reference in keymap
 // Format: 
@@ -49,7 +49,7 @@ Refer to the comments in corne.keymap full definitions
 #define TD_ARR      &td13   // Q AT (@)
 #define TD_ATCAT    &td14   // AT CARET 
 ```
-Names and references prefixed with TD refer to tap-dance functions. Those with the format [number]_[key code] are mod-morph behaviours. They will output the first keycode (the number) but will output the second when shift is held down. 
+Names and references prefixed with TD refer to tap-dance functions, double tap to output key2. Those with the format [number]_[key code] are mod-morph behaviours. They will output the first keycode (the number) but will output the second with shift held down. 
 
 ```
 // include &name in keymap to use
@@ -67,9 +67,9 @@ Names and references prefixed with TD refer to tap-dance functions. Those with t
 // nine_equal  9 --> =  | N9 --> EQUAL
 // zero_s      0 --> *  | N0 --> STAR
 ```
-Refer to the ZMK documentation for further documentation. 
+Refer to the ZMK documentation for further information. 
 
-Run run_keymap.sh to quickly push and start creating a new keymap. 
+Run run_keymap.sh to quickly push your work and start creating a new keymap. 
 
 ## Layout Diagram: 
 ```
@@ -97,13 +97,13 @@ bt_media_layer: BT functions and media controls
                       | GUI |     | SPC |     | ENT |     | ALT |
 ```
 
-Legends like '/ ?' are tap-dance keys. Pressing once will output '/', double tap outputs '?'. 
+Legends like '/ ?' are tap-dance keys. Numbers along the top row can be modified with shift.
 
 ## Credits & References
  
-Programmer-Dvorak Layout: https://www.kaufmann.no/roland/dvorak/
+Original programmer-dvorak layout: https://www.kaufmann.no/roland/dvorak/
 
-Original layout by [Juan René Hernández Sánchez](https://github.com/JReneHS) (JReneHS): https://github.com/JReneHS/crkb_conf/tree/main/rene_prog_dvorak
+Original QMK layout by [Juan René Hernández Sánchez](https://github.com/JReneHS) (JReneHS): https://github.com/JReneHS/crkb_conf/tree/main/rene_prog_dvorak
 
 ZMK: https://zmk.dev
 
@@ -112,7 +112,7 @@ Corne keyboard by [Kosuke Adachi](https://github.com/foostan) (foostan): https:/
  
 ## Contributing
 
-Pull requests are welcome. This was a simple layout I wanted without knowing too much about ZMK. Expansions, remixes and so on are welcome as well as publish your own repos.  
+Pull requests are welcome. This was a simple layout I wanted without knowing too much about ZMK. Expansions, remixes and so on are welcome as well as publish your own repos. Go crazy.
 
 ## License
 
