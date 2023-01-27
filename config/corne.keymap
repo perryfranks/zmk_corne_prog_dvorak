@@ -18,8 +18,9 @@
 #define TAP_SPEED 200
 
 // MACROS to make the the code easier to read
-// name reference key1 key2 
-// inlcude name or reference in keymap
+// include name or reference in keymap
+// Format: 
+//      name        reference  key1 key2 
 #define TD_TAB      &td0    // TAB ESC
 #define TD_CAPLOCK  &td1    // LSHIFT CAPSLOCK 
 #define TD_SPC      &td2    // SPACE ENTER 
@@ -35,6 +36,21 @@
 #define TD_ALT      &td12   // LALT GUI
 #define TD_ARR      &td13   // Q AT (@)
 #define TD_ATCAT    &td14   // AT CARET 
+
+// include &name in keymap to use
+// FORMAT
+//   natural --> (on shift)
+//   number --> symbols | number code --> symbol code 
+// one_lpar    1 --> (  | N1 --> LPAR
+// two_rpar    2 --> )  | N2 --> RPAR
+// three_rbrc  3 --> }  | N3 --> RBRC
+// four_pl     4 --> ]  | N4 --> PLUS
+// five_lbrc   5 --> {  | N5 --> RSFT
+// six_rbkt    6 --> ]  | N6 --> RBKT
+// seven_lbkt  7 --> [  | N7 --> LBKT
+// eight_exlm  8 --> !  | N8 --> EXCL
+// nine_equal  9 --> =  | N9 --> EQUAL
+// zero_s      0 --> *  | N0 --> STAR
 
 / {
 
@@ -197,9 +213,9 @@
                 bindings = <&kp N0>, <&kp STAR>;  
                 mods=<(MOD_LSFT|MOD_RSFT)>;
             }; 
-        two_par: two_paren {
+        two_rpar: two_rparen {
                 compatible = "zmk,behavior-mod-morph";
-                label="TWO_PAR";
+                label="TWO_RPAR";
                 #binding-cells = <0>; 
                 bindings = <&kp N2>,<&kp RPAR>;
                 mods=<(MOD_LSFT|MOD_RSFT)>;
@@ -259,7 +275,7 @@
 // | SHFT   |  F6  |  F7 |  F8 |  F9 |  F10|            |HOME | PGDN| PGUP| END |     |      |
 //                       |     |     |     |            |     |     |     |
                         bindings = <
-   &trans     &seven_lbkt   &five_lbrc  &three_rbrc &one_lpar   &nine_equal          &zero_s    &two_par    &four_pl    &six_rbkt   &eight_exlm &trans
+   &trans     &seven_lbkt   &five_lbrc  &three_rbrc &one_lpar   &nine_equal          &zero_s    &two_rpar    &four_pl    &six_rbkt   &eight_exlm &trans
    &kp F11    &kp F1        &kp F2      &kp F3      &kp F4      &kp F5               &kp LEFT   &kp DOWN    &kp UP      &kp RIGHT   &trans      &trans
    &trans     &kp F6        &kp F7      &kp F8      &kp F9      &kp F10              &kp HOME   &kp PG_DN   &kp PG_UP   &kp END     &trans      &trans
                           	            &trans      &trans      &trans               &trans     &trans      &trans
@@ -280,7 +296,8 @@
                         >;
                 };
 
-// BT functions, media, and discord hotkeys (should add teams as well) 
+
+// bt_media_layer: BT functions and media controls
                 bt_media_layer {
 // -----------------------------------------------------------------------------------------
 // |  ESC |     |     |     |     | game|   |         |     |         |     |   |      |
@@ -295,48 +312,6 @@
                         >;
                 }; 
 
-// A set of layers for qwerty / games 
-                game {
-// -----------------------------------------------------------------------------------------
-// |  ESC |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | TAB  |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
-                        bindings = <
-   &kp ESC   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-   &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &sk LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp TAB
-                  &kp LGUI &mo 5 &kp SPACE   &kp RET &mo 6 &kp RALT
-                        >;
-                };
-
-                game_lower_layer {
-// -----------------------------------------------------------------------------------------
-// |  ESC   |  7   |  5  |  3  |  1  |  9  |            |  0  |  2  |  4  |  6  |  8  |      |
-// | F11    |  F1  |  F2 |  F3 |  F4 |  F5 |            | LFT | DWN |  UP | RGT |     |      |
-// | SHFT   |  F6  |  F7 |  F8 |  F9 |  F10|            |HOME | PGDN| PGUP| END |     |      |
-//                       |     |     |     |            |     |     |     |
-                        bindings = <
-   &trans  &seven_lbkt &five_lbrc &three_rbrc &one_lpar &nine_equal                     &zero_s   &two_par      &four_pl &six_rbkt &eight_exlm &trans
-   &kp F11    &kp F1    &kp F2  &kp F3  &kp F4  &kp F5                      &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-   &trans  &kp F6    &kp F7  &kp F8  &kp F9  &kp F10                     &kp HOME   &kp PG_DN   &kp PG_UP &kp END    &trans &trans
-                          	       &trans &trans &trans                     &trans  &trans   &trans
-                        >;
-                };
-
-                game_raise_layer {
-// -----------------------------------------------------------------------------------------
-// |  ESC |  [  |  {  |  }  |  (  |  =  |       |  *  |  )  |  +  |  ]  |  !  | DEL  |
-// | CTRL |  ~  |  %  |  `  | / ? | @ ^ |       |     |     |     |     |     |      |
-// | SHFT |  $  |  &  |  #  | - _ | \ | |       |     |     |     |     |     |  RST |
-//                    | GUI |     | SPC |       | ENT |     | ALT |
-                        bindings = <
-   &trans      &kp LBKT     &kp LBRC    &kp RBRC    &kp LPAR    &kp EQUAL           &kp STAR    &kp RPAR    &kp PLUS    &kp RBKT    &kp EXCL    &trans    
-   &kp LCTRL   &kp TILDE    &kp PRCNT   &kp GRAVE   TD_SLSH     TD_ATCAT            &trans      &trans      &trans      &trans      &trans      &trans
-   &trans      &kp DLLR     &kp AMPS    &kp HASH    TD_MINUS    TD_BSLS             &trans      &trans      &trans      &trans      &trans      &to 0
-                    	                &trans      &trans      &trans              &trans      &trans      &trans
-                        >;
-                };
  
         };
 };

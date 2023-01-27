@@ -21,8 +21,9 @@ raise_layer: symbols
 //                      | GUI |     | SPC |   | ENT |     | ALT |
 
 
-bt_media_layer: BT functions, media, and discord hotkeys (should add teams as well)
-// |ESC    |      |     |     |     |     |   |DDEAF|     |     |     |     |DMUTE|
+bt_media_layer: BT functions and media controls
+// |ESC    |      |     |     |     |     |   |     |     |     |     |     |     | 
 // |BTCLR  | BT1  | BT2 | BT3 | BT4 | BT5 |   | LFT | PRV | PP  | NXT |     |     |
 // |SHFT   |      |     |     |     |     |   | MUTE| V-  | V+  |     |     |     |
 //                      | GUI |     | SPC |   | ENT |     | ALT |
+
