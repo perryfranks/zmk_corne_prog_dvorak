@@ -67,7 +67,10 @@ Names and references prefixed with TD refer to tap-dance functions. Those with t
 // nine_equal  9 --> =  | N9 --> EQUAL
 // zero_s      0 --> *  | N0 --> STAR
 ```
-Refer to the ZMK documentation for further documentation
+Refer to the ZMK documentation for further documentation. 
+
+Run run_keymap.sh to quickly push and start creating a new keymap. 
+
 ## Layout Diagram: 
 ```
  |TAB:ESC | ; : | , < | . > |  P  |  Y  |     | F   |  G   |  C  |  R  |  L  | BKSP|
