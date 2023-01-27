@@ -2,14 +2,14 @@
 
 A simple but complete implementation of the Programmer Dvorak layout by Roland Kaufmann in the ZMK framework for the spit keyboard the Corne V3 by foostan. 
 
-This was made by referencing [this](https://github.com/JReneHS/crkb_conf/tree/main/rene_prog_dvorak) layout by JReneHS. Apart from this I found little resources, especially for ZMK for this layout so I have dicided to host mine. 
+This was made by referencing [this](https://github.com/JReneHS/crkb_conf/tree/main/rene_prog_dvorak) layout by JReneHS. Apart from this I found little resources, especially for ZMK for this layout so I have decided to host mine. 
 
 
 
-I have included a primative layout diagram for reference in the config folder, guide.txt and print_friendly.txt.
+I have included a primitive layout diagram for reference in the config folder, guide.txt and print_friendly.txt.
 
 ### Deviations from the original layout: 
-Apart from some adjustments made to transfer the layout to smaller number of keys. The main deviation is in the modeling of the number/symbol keys still being SHIFT + Number = SYMBOL instead of SHIFT + SYMBOL = NUMBER. This was mainly a consideration for one handed use as symbols and numbers are seperated by different layers already. 
+Apart from some adjustments made to transfer the layout to smaller number of keys. The main deviation is in the modelling of the number/symbol keys still being SHIFT + Number = SYMBOL instead of SHIFT + SYMBOL = NUMBER. This was mainly a consideration for one handed use as symbols and numbers are separated by different layers already. 
 
 This can be altered by changing the [mod-morph](https://zmk.dev/docs/behaviors/mod-morph) definitions and swapping the order of the keys in the bindings section and double-checking their placement. 
 
@@ -17,9 +17,9 @@ This can be altered by changing the [mod-morph](https://zmk.dev/docs/behaviors/m
 ## Installation
 
 There are several ways to start using this package. 
-- Incorporate into existing repo: Refer to the ZMK getting started instruction for the installation & flashing process: https://zmk.dev/docs. From there the corne.keymap can be simply copy into an existing config.
-- Fork this repo, make your changes and then get the firmware in the normal way using github actions
-- If you don't need to make any changes you can simply grab the firmware from the github actions and get typing
+- Incorporate into existing repo: Refer to the ZMK getting started instruction for the installation & flashing process: https://zmk.dev/docs. From there the corne.keymap can be simply copied into an existing config.
+- Fork this repo, make your changes and then get the firmware in the normal way using Github actions
+- If you don't need to make any changes you can simply grab the firmware from the Github actions and get typing
 
 
 ## Usage
@@ -67,7 +67,7 @@ Names and references prefixed with TD refer to tap-dance functions. Those with t
 // nine_equal  9 --> =  | N9 --> EQUAL
 // zero_s      0 --> *  | N0 --> STAR
 ```
-Refer to the ZMK documentation for further documentaion
+Refer to the ZMK documentation for further documentation
 ## Layout Diagram: 
 ```
  |TAB:ESC | ; : | , < | . > |  P  |  Y  |     | F   |  G   |  C  |  R  |  L  | BKSP|
