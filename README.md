@@ -26,7 +26,7 @@ There are several ways to start using this package.
 
 I recommend printing off a copy of the layout guide if learning dvorak. 
 
-This keymap features a number of tap-dance & mod-morph defines as well as a number of #defined values to make the layout more readable and concise. For the most part the defined functions can be included in the keymap without needing to understand their implementations. Just their behaviour and [key codes](https://zmk.dev/docs/codes) outputed. 
+This keymap features a number of tap-dance & mod-morph defines as well as a number of #defined values to make the layout more readable and concise. For the most part the defined functions can be included in the keymap without needing to understand their implementations. Just their behaviour and [key codes](https://zmk.dev/docs/codes) outputted. 
 
 Refer to the comments in corne.keymap for full definitions
 ```
