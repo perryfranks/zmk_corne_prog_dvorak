@@ -35,6 +35,8 @@
 #define TD_ALT      &td12   // LALT GUI
 #define TD_ARR      &td13   // Q AT (@)
 #define TD_ATCAT    &td14   // AT CARET 
+#define TD_TAW      &td15   // TAB LWIN
+#define TD_SCLOCK   &td16   // (S)LSHIFT CAPSLOCK (Sticky shift)
 
 // include &name in keymap to use
 // FORMAT
@@ -50,6 +52,15 @@
 // eight_exlm  8 --> !  | N8 --> EXCL
 // nine_equal  9 --> =  | N9 --> EQUAL
 // zero_s      0 --> *  | N0 --> STAR
+
+/*
+// Sticky key config if desired
+&sk {
+    //release-after-ms = <2000>;
+    quick-release;
+};
+
+*/
 
 / {
 
@@ -169,6 +180,21 @@
             tapping-term-ms = <TAP_SPEED>; 
             bindings = <&kp AT>, <&kp CARET>;
             };
+        td15: tap_dance_15 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_15"; 
+            #binding-cells = <0>; 
+            tapping-term-ms = <TAP_SPEED>; 
+            bindings = <&kp TAB>, <&kp LWIN>;
+            };
+        td16: tap_dance_16 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_16"; 
+            #binding-cells = <0>; 
+            tapping-term-ms = <TAP_SPEED>; 
+            bindings = <&sk LSHIFT>, <&kp CAPSLOCK>;
+            }; 
+
         // create the shifts of dvorak 
         seven_lbkt: seven_lbkt{ 
                 compatible = "zmk,behavior-mod-morph";
@@ -240,7 +266,6 @@
                 bindings = <&kp N8>,    <&kp EXCL>;
                 mods=<(MOD_LSFT|MOD_RSFT)>;
         };
-        //};
     };
 
     // LAYERS
@@ -263,7 +288,7 @@
                         bindings = <
    TD_TAB     TD_SCLN  TD_COMM TD_DOT &kp P &kp Y                   &kp F &kp G  &kp C     &kp R   &kp L    &kp BSPC
    &kp LCTRL  &kp A    &kp O   &kp E  &kp U &kp I                   &kp D &kp H  &kp T     &kp N   &kp S    &kp DEL
-   TD_CAPLOCK TD_QUOTE TD_ARR  &kp J  &kp K &kp X                   &kp B &kp M  &kp W     &kp V   &kp Z    &kp TAB
+  TD_SCLOCK TD_QUOTE TD_ARR  &kp J  &kp K &kp X                   &kp B &kp M  &kp W     &kp V   &kp Z    TD_TAW
                              TD_ALT  &mo 1 TD_SPC                   TD_SPC &mo 2 &kp RALT
                         >;
                 };
@@ -274,7 +299,7 @@
 // | SHFT   |  F6  |  F7 |  F8 |  F9 |  F10|            |HOME | PGDN| PGUP| END |     |      |
 //                       |     |     |     |            |     |     |     |
                         bindings = <
-   &trans     &seven_lbkt   &five_lbrc  &three_rbrc &one_lpar   &nine_equal          &zero_s    &two_rpar    &four_pl    &six_rbkt   &eight_exlm &trans
+   &trans     &seven_lbkt   &five_lbrc  &three_rbrc &one_lpar   &nine_equal          &zero_s    &two_par    &four_pl    &six_rbkt   &eight_exlm &trans
    &kp F11    &kp F1        &kp F2      &kp F3      &kp F4      &kp F5               &kp LEFT   &kp DOWN    &kp UP      &kp RIGHT   &trans      &trans
    &trans     &kp F6        &kp F7      &kp F8      &kp F9      &kp F10              &kp HOME   &kp PG_DN   &kp PG_UP   &kp END     &trans      &trans
                           	            &trans      &trans      &trans               &trans     &trans      &trans
@@ -306,7 +331,7 @@
                         bindings = <
    &kp ESC    &trans       &trans       &trans       &trans       &trans                &trans          &trans         &trans       &trans     &trans &trans
    &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4          &kp LEFT        &kp C_PREV     &kp C_PP     &kp C_NEXT &trans &trans
-   &kp LSHFT  &trans       &trans       &trans       &trans       &trans                &kp C_MUTE      &kp C_VOL_DN   &kp C_VOL_UP &trans     &trans &trans
+   &trans  &trans       &trans       &trans       &trans       &trans                &kp C_MUTE      &kp C_VOL_DN   &kp C_VOL_UP &trans     &trans &trans
                           	            &kp LGUI     &trans       &kp SPACE             &kp RET         &trans          &kp RALT
                         >;
                 }; 
