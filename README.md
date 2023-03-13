@@ -1,6 +1,6 @@
 # ZMK Corne V3 Programmer Dvorak Layout
 
-A simple but complete implementation of the Programmer Dvorak layout by Roland Kaufmann in the ZMK framework for the spit keyboard the Corne V3 by foostan. 
+A simple ZMK implementation of the Programmer Dvorak layout (by Roland Kaufmann) for the spit keyboard the Corne V3 by foostan. 
 
 This was made by referencing [this](https://github.com/JReneHS/crkb_conf/tree/main/rene_prog_dvorak) QMK layout by JReneHS. Apart from this I found little resources, especially for ZMK for this layout so I have decided to host mine. 
 
