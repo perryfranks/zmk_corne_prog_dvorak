@@ -43,7 +43,7 @@
 //   natural --> (on shift)
 //   number --> symbols | number code --> symbol code 
 // one_lpar    1 --> (  | N1 --> LPAR
-// two_rpar    2 --> )  | N2 --> RPAR
+// two_par     2 --> )  | N2 --> RPAR
 // three_rbrc  3 --> }  | N3 --> RBRC
 // four_pl     4 --> ]  | N4 --> PLUS
 // five_lbrc   5 --> {  | N5 --> RSFT
@@ -238,9 +238,9 @@
                 bindings = <&kp N0>, <&kp STAR>;  
                 mods=<(MOD_LSFT|MOD_RSFT)>;
             }; 
-        two_rpar: two_rparen {
+        two_par: two_paren {
                 compatible = "zmk,behavior-mod-morph";
-                label="TWO_RPAR";
+                label="TWO_PAR";
                 #binding-cells = <0>; 
                 bindings = <&kp N2>,<&kp RPAR>;
                 mods=<(MOD_LSFT|MOD_RSFT)>;
