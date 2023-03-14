@@ -1,17 +1,17 @@
 # ZMK Corne V3 Programmer Dvorak Layout
 
-A simple ZMK implementation of the Programmer Dvorak layout (by Roland Kaufmann) for the spit keyboard the Corne V3 by foostan. 
+A simple ZMK implementation of the Programmer Dvorak layout (by Roland Kaufmann) for the Corne V3 split keyboard by foostan. 
 
-This was made by referencing [this](https://github.com/JReneHS/crkb_conf/tree/main/rene_prog_dvorak) QMK layout by JReneHS. Apart from this I found little resources, especially for ZMK for this layout so I have decided to host mine. 
+This was made by referencing [this](https://github.com/JReneHS/crkb_conf/tree/main/rene_prog_dvorak) QMK layout by JReneHS. Apart from this I found little resources, especially for ZMK, for this layout so I have decided to host mine. 
 
 
 
-I have included a primitive layout diagram for reference in the config folder, guide.txt and print_friendly.txt.
+I have included a primitive layout diagram for reference in the config folder: guide.txt and print_friendly.txt.
 
 ### Deviations from the original layout: 
-Apart from some adjustments made to transfer the layout to a smaller number of keys. The main deviation is in the modelling of the number/symbol keys still being SHIFT + Number = SYMBOL instead of SHIFT + SYMBOL = NUMBER. This was mainly a consideration for one handed use as symbols and numbers are separated by different layers already. 
+Apart from some adjustments made to transfer the layout to a smaller number of keys. The main deviation is in the modelling of the number/symbol keys still being SHIFT + Number = SYMBOL instead of SHIFT + SYMBOL = NUMBER. This was mainly a consideration for one handed use as symbols and numbers are separated by different layers already so this isn't very relavent. 
 
-This can be altered by changing the [mod-morph](https://zmk.dev/docs/behaviors/mod-morph) definitions and swapping the order of the keys in the bindings section and double-checking their placement. 
+This can be altered by changing the [mod-morph](https://zmk.dev/docs/behaviors/mod-morph) definitions and swapping the order of the keys in the bindings section and double-checking their placement. For example changing the binding like so:
 
     bindings = <&kp N7>, <&kp LBKT>;  --> bindings = <&kp LBKT>, <&kp N7>;
 ## Installation
@@ -24,7 +24,7 @@ There are several ways to start using this package.
 
 ## Usage
 
-I recommend printing off a copy of the layout guide if learning dvorak. 
+I recommend printing off a copy of the layout guide if learning dvorak. And learning the layout is discussed elsewhere. 
 
 This keymap features a number of tap-dance & mod-morph defines as well as a number of #defined values to make the layout more readable and concise. For the most part the defined functions can be included in the keymap without needing to understand their implementations. Just their behaviour and [key codes](https://zmk.dev/docs/codes) outputted. 
 
@@ -49,7 +49,7 @@ Refer to the comments in corne.keymap for full definitions
 #define TD_ARR      &td13   // Q AT (@)
 #define TD_ATCAT    &td14   // AT CARET 
 ```
-Names and references prefixed with TD refer to tap-dance functions, double tap to output key2. Those with the format [number]_[key code] are mod-morph behaviours. They will output the first keycode (the number) but will output the second with shift held down. 
+Names and references prefixed with TD refer to tap-dance functions, double tap the key to output key2. Those with the format [number]_[key code] are mod-morph behaviours. They will output the first keycode (the number) but will output the second with shift held down. 
 
 ```
 // include &name in keymap to use
@@ -69,7 +69,7 @@ Names and references prefixed with TD refer to tap-dance functions, double tap t
 ```
 Refer to the ZMK documentation for further information. 
 
-Run run_keymap.sh to quickly push your work and start creating a new keymap. 
+Run run_keymap.sh to quickly push your work and start compiling a new keymap. This isn't needed I'm just lazy.
 
 ## Layout Diagram: 
 ```
