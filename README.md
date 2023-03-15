@@ -8,6 +8,8 @@ This was made by referencing [this](https://github.com/JReneHS/crkb_conf/tree/ma
 
 I have included a primitive layout diagram for reference in the config folder: guide.txt and print_friendly.txt.
 
+Please note that the layout doesn't have have RGB functionality currently though it is supported by ZMK and I'm sure can be enabled without too much headache. 
+
 ### Deviations from the original layout: 
 Apart from some adjustments made to transfer the layout to a smaller number of keys. The main deviation is in the modelling of the number/symbol keys still being SHIFT + Number = SYMBOL instead of SHIFT + SYMBOL = NUMBER. This was mainly a consideration for one handed use as symbols and numbers are separated by different layers already so this isn't very relavent. 
 
